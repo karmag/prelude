@@ -6,6 +6,8 @@
 ;;--------------------------------------------------
 ;; counteract prelude
 
+(setq prelude-guru nil)
+
 (disable-theme 'zenburn)
 
 (setq scroll-margin 0
@@ -13,14 +15,6 @@
       scroll-preserve-screen-position t)
 
 (setq prelude-flyspell nil)
-
-;; flx/ido - from - https://github.com/lewang/flx
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
 
 ;;--------------------------------------------------
 ;; colors
@@ -122,4 +116,3 @@
 (defun my-minibuffer-setup-hook ()
   (my-keys-minor-mode 0))
 (add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
-
