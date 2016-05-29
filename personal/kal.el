@@ -24,6 +24,7 @@
  '(erc-prompt-face ((t (:background "black" :foreground "lightblue" :weight bold)))))
 
 ;; -- (set-default-font "Consolas 14")
+(set-face-attribute 'default nil :height 140)
 
 (set-cursor-color "yellow")
 
@@ -38,7 +39,17 @@
   '(defun magit-highlight-section ()))
 
 ;;--------------------------------------------------
+;; clojure indentation
+
+;; add as hook (put-clojure-indent 'fact 1)
+
+;;--------------------------------------------------
 ;; other
+
+;; Don't keep sentence start and end on same line
+(add-hook 'fill-nobreak-predicate 'fill-single-word-nobreak-p)
+
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 (setq include-path (expand-file-name "~/.emacs.d/personal/"))
 (add-to-list 'load-path include-path)
